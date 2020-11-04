@@ -28,6 +28,13 @@ module.exports = {
         exclude: path.join(__dirname, '../node_modules')
       },
       {
+        test: /\.ts$/,
+        use: [
+          'ts-loader'
+        ],
+        exclude: path.join(__dirname, '../node_modules')
+      },
+      {
         test: /\.css$/,
         use: [
           'style-loader',

@@ -1,3 +1,9 @@
-import components from './component';
+import React from 'react';
+import { render } from 'react-dom';
+import 'regenerator-runtime/runtime';
+import App from './router';
 
-export default components;
+render(
+  <App />,
+  document.getElementById('root')
+);

@@ -7,13 +7,13 @@ const webpackBase = require('./webpack.base');
 const webpackConfig = merge(webpackBase, {
   entry: path.join(__dirname, '../app/main.js'),
   output: {
-    path: path.join(__dirname, '../dist'),
-    filename: '[name]_[hash].js'
+    path: path.join(__dirname, '../build'),
+    filename: 'index.js'
   },
   devtool: 'source-map',
   devServer: {
     contentBase: '../dist',
-    port: 4000,
+    port: 6666,
     hot: true,
     stats: 'errors-only',
     historyApiFallback: true
@@ -21,7 +21,7 @@ const webpackConfig = merge(webpackBase, {
   mode: 'development',
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new OpenBrowserWebpackPlugin({ url: 'http://localhost:4000' })
+    new OpenBrowserWebpackPlugin({ url: 'http://localhost:6666' })
   ]
 })
 

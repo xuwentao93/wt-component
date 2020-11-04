@@ -1,0 +1,18 @@
+{
+  "import/resolver": {
+    "node": {
+      "extensions": [".js", ".jsx", ".ts", ".tsx"]
+    }
+  },
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5",
+    "allowJs": true,
+    "sourceMap": true,
+    "strictNullChecks": true, // 不允许将 null, undefined 分配给其他基本数据类型.
+    "jsx": "react",
+    // "experimentalDecorators": true // 是否开启装饰器.
+  }
+}
