@@ -10,7 +10,7 @@ const webpackBase = require('./webpack.base.js');
 
 const webpackConfig = merge(webpackBase, {
   entry: {
-    'index': path.join(__dirname, '../app/component/index.js')
+    index: path.join(__dirname, '../app/component/index.js')
   },
   output: {
     path: path.join(__dirname, '../dist'),
@@ -24,13 +24,13 @@ const webpackConfig = merge(webpackBase, {
       commonjs: 'react',
       commonjs2: 'react',
       amd: 'react',
-      root: 'React',
+      root: 'React'
     },
     'react-dom': {
       commonjs: 'react-dom',
       commonjs2: 'react-dom',
       amd: 'react-dom',
-      root: 'ReactDOM',
+      root: 'ReactDOM'
     }
   },
   stats: 'errors-only',

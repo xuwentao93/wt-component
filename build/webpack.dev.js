@@ -13,7 +13,7 @@ const webpackConfig = merge(webpackBase, {
   devtool: 'source-map',
   devServer: {
     contentBase: '../dist',
-    port: 6666,
+    port: 4000,
     hot: true,
     stats: 'errors-only',
     historyApiFallback: true
@@ -21,8 +21,8 @@ const webpackConfig = merge(webpackBase, {
   mode: 'development',
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new OpenBrowserWebpackPlugin({ url: 'http://localhost:6666' })
+    new OpenBrowserWebpackPlugin({ url: 'http://localhost:4000' })
   ]
-})
+});
 
 module.exports = webpackConfig;

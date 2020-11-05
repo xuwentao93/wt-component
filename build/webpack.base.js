@@ -9,26 +9,26 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, '../app/')
     },
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx|ts|tsx)$/,
         use: [
-          {
-            loader: 'thread-loader',
-            options: {
-              workers: 3
-            }
-          },
-          'babel-loader',
-          'eslint-loader'
+          // {
+          //   loader: 'thread-loader',
+          //   options: {
+          //     workers: 3
+          //   }
+          // },
+          'babel-loader'
+          // 'eslint-loader'
         ],
         exclude: path.join(__dirname, '../node_modules')
       },
       {
-        test: /\.ts$/,
+        test: /\.(ts|tsx)$/,
         use: [
           'ts-loader'
         ],

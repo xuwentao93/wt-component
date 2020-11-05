@@ -1,10 +1,14 @@
 import React from 'react';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import component from '../component';
 
 export default function App() {
   return (
     <Router>
-      <Route component={Hello} path="/" />
+      <Switch>
+        <Route component={component.Button} path="/" />
+        <Route component={Hello} path="/test" />
+      </Switch>
     </Router>
   );
 }

@@ -1,9 +1,5 @@
-import Test from './test';
-import Func from './func';
-import Clasz from './clasz';
+import Button from './button/index';
 
 export default {
-  Test,
-  Func,
-  Clasz
+  Button
 };
