@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const glob = require('glob');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
@@ -8,9 +9,17 @@ const SpeedMeasureWebpackPlugin = require('speed-measure-webpack-plugin');
 const merge = require('webpack-merge');
 const webpackBase = require('./webpack.base.js');
 
+// eslint-disable-next-line max-len
+const components = glob.sync(path.join(__dirname, '../app/component/*/')).reduce((prev, curr) => ({
+  [`${path.basename(curr)}`]: curr,
+  ...prev
+}), {});
+console.log(components);
+
 const webpackConfig = merge(webpackBase, {
   entry: {
-    index: path.join(__dirname, '../app/component/index.js')
+    index: path.join(__dirname, '../app/component/index.js'),
+    ...components
   },
   output: {
     path: path.join(__dirname, '../dist'),
