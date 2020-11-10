@@ -8,5 +8,5 @@ export default function Button() {
     }
   };
 
-  return <span onClick={methods.test} className="personal-component-button-container">123</span>;
+  return <div onClick={methods.test} className="personal-component-button-container">123</div>;
 }

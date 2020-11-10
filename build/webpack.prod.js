@@ -17,7 +17,7 @@ console.log(components);
 
 const webpackConfig = merge(webpackBase, {
   entry: {
-    index: path.join(__dirname, '../app/component/index.tsx')
+    index: path.join(__dirname, '../app/component/index.js')
     // ...components
   },
   output: {
