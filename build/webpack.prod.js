@@ -9,7 +9,6 @@ const SpeedMeasureWebpackPlugin = require('speed-measure-webpack-plugin');
 const merge = require('webpack-merge');
 const webpackBase = require('./webpack.base.js');
 
-// eslint-disable-next-line max-len
 const components = glob.sync(path.join(__dirname, '../app/component/*/')).reduce((prev, curr) => ({
   [`${path.basename(curr)}`]: curr,
   ...prev
@@ -18,13 +17,14 @@ console.log(components);
 
 const webpackConfig = merge(webpackBase, {
   entry: {
-    index: path.join(__dirname, '../app/component/index.tsx'),
-    ...components
+    index: path.join(__dirname, '../app/component/index.tsx')
+    // ...components
   },
   output: {
     path: path.join(__dirname, '../dist'),
     // eslint-disable-next-line no-constant-condition
-    filename: './[name]/index.js',
+    // filename: './[name]/index.js',
+    filename: './index.js',
     library: 'wtComponent',
     libraryTarget: 'umd', // 支持 import, require, script 标签等方式引入.
     libraryExport: 'default' // 不设置要 xxx.default 的方式引入.

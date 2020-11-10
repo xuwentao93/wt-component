@@ -2,7 +2,6 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   resolve: {
@@ -63,22 +62,10 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: './[name]/index.css'
+      // filename: './[name]/index.css'
+      filename: './index.css'
     }),
     new FriendlyErrorsWebpackPlugin(),
-    new HardSourceWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, '../app/index.html'),
-      filename: 'index.html',
-      inject: true,
-      minify: {
-        html5: true,
-        collapseWhitespace: true,
-        preserveLineBreaks: false,
-        minifyCSS: true,
-        minifyJS: true,
-        removeComments: false
-      }
-    })
+    new HardSourceWebpackPlugin()
   ]
 };
