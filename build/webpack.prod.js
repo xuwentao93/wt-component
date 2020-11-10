@@ -18,12 +18,13 @@ console.log(components);
 
 const webpackConfig = merge(webpackBase, {
   entry: {
-    index: path.join(__dirname, '../app/component/index.js'),
+    index: path.join(__dirname, '../app/component/index.tsx'),
     ...components
   },
   output: {
     path: path.join(__dirname, '../dist'),
-    filename: './js/[name].js',
+    // eslint-disable-next-line no-constant-condition
+    filename: './[name]/index.js',
     library: 'wtComponent',
     libraryTarget: 'umd', // 支持 import, require, script 标签等方式引入.
     libraryExport: 'default' // 不设置要 xxx.default 的方式引入.

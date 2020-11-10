@@ -63,7 +63,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: './css/[name]_[contenthash:8].css'
+      filename: './[name]/index.css'
     }),
     new FriendlyErrorsWebpackPlugin(),
     new HardSourceWebpackPlugin(),
