@@ -1,3 +1,7 @@
-const a = 1;
+export function createComponentRootClassName(component: string): string {
+  return `wt-personal-component-root-${component}`;
+}
 
-export default a;
+export function createPageRootClassName(component: string): string {
+  return `wt-personal-component-root-${component}`;
+}

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './index.less';
 
-export default function Button() {
+export default function Input() {
   const methods = {
     test() {
       console.log(1);

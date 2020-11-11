@@ -1,20 +1,25 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import component from '../component';
+import Pages, { Introduce, Home } from '../pages';
+
+const routes = Object.keys(Pages).map(item => ({
+  component: Pages[item],
+  path: `/component/${item.toLowerCase().slice(0, -4)}`,
+  exact: true
+}));
+
+console.log(routes);
 
 export default function App() {
   return (
     <Router>
       <Switch>
-        <Route component={component.Button} path="/" />
-        <Route component={Hello} path="/test" />
+        <Route component={Home} path="/" exact />
+        <Route component={Introduce} path="/introduce" exact />
+        {routes.map(route => (
+          <Route component={route.component} path={route.path} exact={route.exact} key={route.path} />
+        ))}
       </Switch>
     </Router>
-  );
-}
-
-function Hello() {
-  return (
-    <div>hello world!</div>
   );
 }

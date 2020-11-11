@@ -1,12 +1,19 @@
 import * as React from 'react';
 import './index.less';
+import { createComponentRootClassName } from '../../utils/index';
 
-export default function Button() {
+const buttonStyle = createComponentRootClassName('button');
+
+interface Props {
+  children: any
+}
+
+export default function Button({ children }: Props) {
   const methods = {
-    test() {
+    test(): void {
       console.log(1);
     }
   };
 
-  return <div onClick={methods.test} className="personal-component-button-container">123</div>;
+  return <div onClick={methods.test} className={buttonStyle}>{children}</div>;
 }
