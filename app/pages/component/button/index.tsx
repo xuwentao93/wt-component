@@ -6,9 +6,15 @@ import Button from '../../../component/button/index';
 const button = createPageRootClassName('button');
 
 export default function ButtonPage() {
+  const methods = {
+    test(): void {
+      console.log(1);
+    }
+  };
+
   return (
     <div className={button}>
-      <Button>button page</Button>
+      <Button onClick={methods.test}>button page</Button>
     </div>
   );
 }

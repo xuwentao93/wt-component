@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --config build/webpack.prod.js",
     "dev": "npm start",
-    "start": "webpack-dev-server --config build/webpack.dev.js"
+    "start": "webpack-dev-server --config build/webpack.dev.js",
+    "prodweb": "webpack --config build/webpack.dev.js"
   },
   "keywords": [
     "react",

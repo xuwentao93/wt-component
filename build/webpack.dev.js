@@ -5,16 +5,19 @@ const OpenBrowserWebpackPlugin = require('open-browser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpackBase = require('./webpack.base');
 
+const port = 4000;
+
 const webpackConfig = merge(webpackBase, {
   entry: path.join(__dirname, '../app/main.js'),
   output: {
-    path: path.join(__dirname, '../build'),
-    filename: 'index.js'
+    path: path.join(__dirname, '../wt-component'),
+    filename: 'index.js',
+    publicPath: '/'
   },
   devtool: 'source-map',
   devServer: {
     contentBase: '../dist',
-    port: 4000,
+    port,
     hot: true,
     stats: 'errors-only',
     historyApiFallback: true
@@ -22,7 +25,7 @@ const webpackConfig = merge(webpackBase, {
   mode: 'development',
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new OpenBrowserWebpackPlugin({ url: 'http://localhost:4000' }),
+    new OpenBrowserWebpackPlugin({ url: `http://localhost:${port}` }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, '../app/index.html'),
       filename: 'index.html',

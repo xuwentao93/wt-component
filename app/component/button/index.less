@@ -4,7 +4,50 @@
   padding: 5px 15px;
   width: fit-content;
   border-radius: 3px;
-  background-color: #49f;
-  color: #fff;
-  transition: background .2s;
+  user-select: none;
+  transition: background .2s, color .2s, border-color .2s;
+  cursor: pointer;
+
+  &-primary {
+    color: #fff;
+    background-color: #49f;
+  }
+  
+  &-primary:hover {
+    background: #66b1ff;
+  }
+  
+  &-primary:active {
+    background-color: #3a8ee6;
+  }
+  
+  &-normal {
+    border: 1px solid #dcdfe6;
+    color: #606266;
+    background-color: #fff;
+  }
+  
+  &-normal:hover {
+    color: #49f;
+    background-color: #ecf5ff;
+    border-color: #c6e2ff;
+  }
+  
+  &-normal:active {
+    color: #3a8ee6;
+    border-color: #3a8ee6;
+  }
+  
+  &-danger {
+    color: #fff;
+    background-color: #f56c6c;
+  }
+  
+  &-danger:hover {
+    background-color: #f78989;
+  }
+  
+  &-danger:active {
+    background-color: #dd6161;
+  }
 }
