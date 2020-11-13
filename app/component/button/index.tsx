@@ -28,7 +28,7 @@ export default function Button({
   };
 
   return (
-    <div className={className}>
+    <div className={className} {...rest}>
       {children}
     </div>
   );

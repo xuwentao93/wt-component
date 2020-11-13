@@ -14,7 +14,7 @@ export default function ButtonPage() {
 
   return (
     <div className={button}>
-      <Button onClick={methods.test}>button page</Button>
+      <Button onClick={methods.test} onMouseEnter={methods.test}>button page</Button>
     </div>
   );
 }

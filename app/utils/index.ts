@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 export function createComponentRootClassName(component: string): string {
   return `wt-personal-component-root-${component}`;
 }
@@ -13,8 +15,8 @@ export function getClassName(compClass: Array<string>, compName: string, otherCl
 
 export interface BasicProps {
   children: any,
-  onClick?: Function,
-  onMouseEnter?: Function,
-  onMouseLeave?: Function,
-  onLoad?: Function
+  onClick?: (e?: React.MouseEvent<HTMLDivElement>) => void,
+  onMouseEnter?: (e?: React.MouseEvent<HTMLDivElement>) => void,
+  onMouseLeave?: (e?: React.MouseEvent<HTMLDivElement>) => void,
+  onLoad?: (e?: React.SyntheticEvent<HTMLDivElement>) => void
 }

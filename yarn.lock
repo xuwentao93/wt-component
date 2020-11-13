@@ -7639,6 +7639,11 @@ xtend@^4.0.0, xtend@~4.0.1:
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.2.tgz#bb72779f5fa465186b1f438f674fa347fdb5db54"
   integrity sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==
 
+xwt-utils@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/xwt-utils/-/xwt-utils-1.0.0.tgz#c272779b082e5972a31eba4e4a74f879ba2f0e9b"
+  integrity sha512-Q0rVgBZ4kJ3Ca90Wf8v1hS1/bEXqGkKWWs8M9kof2pi/ps0ENVnEY2jiyREOP/F9oiHnJ1kt8duYOYfpT7D+XQ==
+
 y18n@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/y18n/-/y18n-4.0.0.tgz#95ef94f85ecc81d007c264e190a120f0a3c8566b"
