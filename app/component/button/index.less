@@ -1,12 +1,47 @@
 @import '../../styles/index.less';
 
 .@{component-prefix}-button {
+  position: relative; // 子元素绝对定位用.
   padding: 5px 15px;
   width: fit-content;
   border-radius: 3px;
   user-select: none;
-  transition: background .2s, color .2s, border-color .2s;
+  transition: background .5s, color .5s, border-color .5s;
   cursor: pointer;
+
+  &-triangle {
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    border-left-color: transparent !important;
+    border-top-color: transparent !important;
+    transition: background .5s, color .5s, border-color .5s;
+    transform: rotate(45deg);
+
+    &-left {
+      left: -6px;
+      top: 50%;
+      margin-top: -6px;
+    }
+
+    &-right {
+      right: -6px;
+      top: 50%;
+      margin-top: -6px;
+    }
+
+    &-top {
+      top: -6px;
+      left: 50%;
+      margin-left: -6px;
+    }
+    
+    &-bottom {
+      bottom: -6px;
+      left: 50%;
+      margin-left: -6px;
+    }
+  }
 
   &-primary {
     color: #fff;
@@ -14,11 +49,19 @@
   }
   
   &-primary:hover {
-    background: #66b1ff;
+    background-color: #66b1ff;
+
+    & .@{component-prefix}-button-primary {
+      background-color: #66b1ff;
+    }
   }
   
   &-primary:active {
     background-color: #3a8ee6;
+
+    & .@{component-prefix}-button-primary {
+      background-color: #3a8ee6;
+    }
   }
   
   &-normal {
@@ -31,11 +74,52 @@
     color: #49f;
     background-color: #ecf5ff;
     border-color: #c6e2ff;
+
+    & .@{component-prefix}-button-normal {
+      color: #49f;
+      background-color: #ecf5ff;
+      border-color: #c6e2ff;
+    }
   }
   
   &-normal:active {
     color: #3a8ee6;
     border-color: #3a8ee6;
+
+    & .@{component-prefix}-button-normal {
+      color: #3a8ee6;
+      border-color: #3a8ee6;
+    }
+  }
+
+  &-warn {
+    color: #fff;
+    background-color: #e6a23c;
+    border-color: #e6a23c;
+  }
+
+  &-warn:hover {
+    background: #ebb563;
+    border-color: #ebb563;
+    color: #fff;
+    
+    & .@{component-prefix}-button-warn {
+      background: #ebb563;
+      border-color: #ebb563;
+      color: #fff;
+    }
+  }
+
+  &-warn:active {
+    background: #cf9236;
+    border-color: #cf9236;
+    color: #fff;
+
+    & .@{component-prefix}-button-warn {
+      background: #cf9236;
+      border-color: #cf9236;
+      color: #fff;
+    }
   }
   
   &-danger {
@@ -45,9 +129,18 @@
   
   &-danger:hover {
     background-color: #f78989;
+
+    & .@{component-prefix}-button-danger {
+      background-color: #f78989;
+    }
   }
   
   &-danger:active {
     background-color: #dd6161;
+
+
+    & .@{component-prefix}-button-danger {
+      background-color: #dd6161;
+    }
   }
 }

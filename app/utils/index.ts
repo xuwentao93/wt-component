@@ -10,11 +10,12 @@ export function createPageRootClassName(component: string): string {
 
 // eslint-disable-next-line max-len
 export function getClassName(compClass: Array<string>, compName: string, otherClass: Array<string>): string {
-  return [compName, ...compClass.map(item => `${compName}-${item}`), ...otherClass].join(' ');
+  return [...compClass.map(item => `${compName}-${item}`), ...otherClass].join(' ');
 }
 
 export interface BasicProps {
-  children: any,
+  children?: any,
+  style?: object,
   onClick?: (e?: React.MouseEvent<HTMLDivElement>) => void,
   onMouseEnter?: (e?: React.MouseEvent<HTMLDivElement>) => void,
   onMouseLeave?: (e?: React.MouseEvent<HTMLDivElement>) => void,

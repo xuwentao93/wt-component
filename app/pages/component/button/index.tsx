@@ -14,7 +14,17 @@ export default function ButtonPage() {
 
   return (
     <div className={button}>
-      <Button onClick={methods.test} onMouseEnter={methods.test}>button page</Button>
+      <Button
+        onClick={methods.test}
+        onMouseEnter={methods.test}
+        style={{ fontSize: '20px' }}
+        arrow="bottom"
+      >
+        button page
+      </Button>
+      <Button type="primary" style={{ marginTop: '20px' }} arrow="left">213</Button>
+      <Button type="danger" style={{ marginTop: '20px' }} arrow="right">213</Button>
+      <Button type="warn" style={{ marginTop: '20px' }} arrow="top">213</Button>
     </div>
   );
 }

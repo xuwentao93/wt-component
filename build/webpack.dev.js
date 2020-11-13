@@ -28,6 +28,7 @@ const webpackConfig = merge(webpackBase, {
     new OpenBrowserWebpackPlugin({ url: `http://localhost:${port}` }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, '../app/index.html'),
+      favicon: './bighead.ico',
       filename: 'index.html',
       inject: true,
       minify: {

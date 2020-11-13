@@ -7,28 +7,41 @@ const buttonStyle = createComponentRootClassName('button');
 
 interface ButtonProps extends BasicProps {
   loading?: boolean,
-  type?: string
+  type?: string,
+  arrow?: string
 }
 
 export default function Button({
   children,
   loading,
-  type,
+  type = 'normal',
+  arrow = '',
   ...rest
 }: ButtonProps) {
+  const ButtonTypes: Array<string | undefined> = ['primary', 'normal', 'danger', 'warn'];
+  if (!ButtonTypes.includes(type)) {
+    type = 'normal';
+    console.warn('输入的 type 有误, 可能会影响到正常样式, 请检查拼写是否正确.');
+  }
+
   const buttonClass: Array<string> = [
-    type || 'normal'
+    type,
+    arrow
   ];
-  const otherClass: Array<string> = [];
+  const otherClass: Array<string> = [buttonStyle];
   const className: string = getClassName(buttonClass, buttonStyle, otherClass);
-  const methods = {
-    test(): void {
-      console.log(1);
-    }
-  };
+
+  const triangleClass: Array<string> = [
+    'triangle',
+    `triangle-${arrow}`,
+    type
+  ];
+  const triangleClassName: string = getClassName(triangleClass, buttonStyle, []);
+  const methods = {};
 
   return (
     <div className={className} {...rest}>
+      {arrow && <div className={triangleClassName} />}
       {children}
     </div>
   );
@@ -36,5 +49,6 @@ export default function Button({
 
 Button.defaultProps = {
   loading: false,
-  type: 'normal'
+  type: 'normal',
+  arrow: ''
 };
