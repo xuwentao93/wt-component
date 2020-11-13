@@ -45,6 +45,7 @@
 
   &-primary {
     color: #fff;
+    fill: #fff;
     background-color: #49f;
   }
   
@@ -67,11 +68,13 @@
   &-normal {
     border: 1px solid #dcdfe6;
     color: #606266;
+    fill: #606266;
     background-color: #fff;
   }
   
   &-normal:hover {
     color: #49f;
+    fill: #49f;
     background-color: #ecf5ff;
     border-color: #c6e2ff;
 
@@ -94,6 +97,7 @@
 
   &-warn {
     color: #fff;
+    fill: #fff;
     background-color: #e6a23c;
     border-color: #e6a23c;
   }
@@ -124,6 +128,7 @@
   
   &-danger {
     color: #fff;
+    fill: #fff;
     background-color: #f56c6c;
   }
   
@@ -142,5 +147,13 @@
     & .@{component-prefix}-button-danger {
       background-color: #dd6161;
     }
+  }
+
+  &-disabled, &-disabled:hover, &-disabled:active {
+    color: rgba(0, 0, 0, .25);
+    fill: rgba(0, 0, 0, .25);
+    background-color: #f5f5f5;
+    border-color: #d9d9d9;
+    cursor: not-allowed;
   }
 }

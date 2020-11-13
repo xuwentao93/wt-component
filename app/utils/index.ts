@@ -10,7 +10,7 @@ export function createPageRootClassName(component: string): string {
 
 // eslint-disable-next-line max-len
 export function getClassName(compClass: Array<string>, compName: string, otherClass: Array<string>): string {
-  return [...compClass.map(item => `${compName}-${item}`), ...otherClass].join(' ');
+  return [...compClass.map(item => (item === '' ? '' : `${compName}-${item}`)), ...otherClass].join(' ');
 }
 
 export interface BasicProps {
