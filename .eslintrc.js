@@ -36,7 +36,8 @@ module.exports = {
     "no-param-reassign": ["off"],
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/no-static-element-interactions": "off",
-    "prefer-object-spread": "off"
+    "prefer-object-spread": "off",
+    "react/jsx-props-no-spreading": "off"
     // "prefer-const": ["off"]
   }
 }
