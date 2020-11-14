@@ -14,8 +14,9 @@ export function getClassName(compClass: Array<string>, compName: string, otherCl
 }
 
 export interface BasicProps {
-  children?: any,
+  children?: React.ReactChild,
   style?: object,
+  compRef?: any,
   onClick?: (e?: React.MouseEvent<HTMLDivElement>) => void,
   onMouseEnter?: (e?: React.MouseEvent<HTMLDivElement>) => void,
   onMouseLeave?: (e?: React.MouseEvent<HTMLDivElement>) => void,

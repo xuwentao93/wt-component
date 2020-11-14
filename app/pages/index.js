@@ -1,9 +1,11 @@
 import ButtonPage from './component/button/index';
 import InputPage from './component/input/index';
+import NavigationPage from './component/navigation/index';
 
 export default {
   ButtonPage,
-  InputPage
+  InputPage,
+  NavigationPage
 };
 
 export { default as Home } from './home/index';

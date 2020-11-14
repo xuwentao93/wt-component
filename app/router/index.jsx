@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Pages, { Introduce, Home } from '../pages';
+import Navigation from '../component/navigation';
 
 const routes = Object.keys(Pages).map(item => ({
   component: Pages[item],
@@ -11,6 +12,7 @@ const routes = Object.keys(Pages).map(item => ({
 export default function App() {
   return (
     <Router>
+      <Navigation>1</Navigation>
       <Switch>
         <Route component={Home} path="/" exact />
         <Route component={Introduce} path="/introduce" exact />
