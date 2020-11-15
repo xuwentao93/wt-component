@@ -7,13 +7,15 @@ const NavigationStyle = createComponentRootClassName('Navigation');
 
 interface NavigationProps extends BasicProps {
   fixed?: boolean,
-  shadow?: boolean
+  shadow?: boolean,
+  selected?: boolean
 }
 
 export default function Navigation({
   children,
   fixed = false,
   shadow = true,
+  selected = false,
   compRef = useRef(),
   style = {},
   ...rest
@@ -24,7 +26,7 @@ export default function Navigation({
     <>
       <div
         className={className}
-        style={{ ...style, position: fixed ? 'fixed' : 'static' }}
+        style={{ ...style, position: fixed ? 'fixed' : 'static', color: selected ? '#454bff' : '#333' }}
         {...rest}
       >
         {children}
@@ -36,5 +38,6 @@ export default function Navigation({
 
 Navigation.defaultProps = {
   fixed: false,
-  shadow: true
+  shadow: true,
+  selected: false
 };

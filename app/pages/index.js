@@ -11,3 +11,5 @@ export default {
 export { default as Home } from './home/index';
 
 export { default as Introduce } from './introduce/index';
+
+export { default as Profile } from './profile/index';
