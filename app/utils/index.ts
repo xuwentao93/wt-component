@@ -22,3 +22,8 @@ export interface BasicProps {
   onMouseLeave?: (e?: React.MouseEvent<HTMLDivElement>) => void,
   onLoad?: (e?: React.SyntheticEvent<HTMLDivElement>) => void
 }
+
+export interface IconProps {
+  style?: object,
+  className?: string
+}

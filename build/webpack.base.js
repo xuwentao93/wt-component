@@ -8,7 +8,7 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, '../app/')
     },
-    extensions: ['.js', '.jsx', '.ts', '.tsx', 'index.tsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '/index.tsx', '/index.jsx', '/index.js', '/index.ts']
   },
   module: {
     rules: [

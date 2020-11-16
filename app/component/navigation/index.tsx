@@ -27,6 +27,7 @@ export default function Navigation({
       <div
         className={className}
         style={{ ...style, position: fixed ? 'fixed' : 'static', color: selected ? '#454bff' : '#333' }}
+        ref={compRef}
         {...rest}
       >
         {children}

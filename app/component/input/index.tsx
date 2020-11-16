@@ -1,28 +1,46 @@
 import * as React from 'react';
 import './index.less';
-import { createComponentRootClassName, BasicProps, getClassName } from '../../utils/index';
+// eslint-disable-next-line import/no-unresolved
+import { createComponentRootClassName, BasicProps, getClassName } from '@/utils/index';
 
 const InputStyle = createComponentRootClassName('Input');
 
 interface InputProps extends BasicProps {
-  onChange?: (e: React.ChangeEvent<HTMLDivElement>) => void,
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void,
   onBlur?: (e?: React.FocusEvent<HTMLDivElement>) => void,
   onFocus?: (e?: React.FocusEvent<HTMLDivElement>) => void,
+  prefix?: any,
+  suffix?: any,
   value?: any
 }
 
 export default function Input({
   onChange,
+  prefix = null,
+  suffix = null,
+  style = {},
   ...rest
 }: InputProps) {
   const InputClass: Array<string> = [];
-  const className = getClassName(InputClass, InputStyle, []);
+  const className = getClassName(InputClass, InputStyle, [InputStyle]);
   return (
-    <input
-      className={className}
-      onChange={onChange}
-      {...rest}
-    />
+    <span style={{ display: 'table' }}>
+      {prefix && (
+        <span className={`${InputStyle}-fix`}>{prefix}</span>
+      )}
+      <input
+        className={className}
+        style={{
+          borderRadius: (prefix || suffix) ? '0' : '3px',
+          display: (prefix || suffix) ? 'table-cell' : 'inline-block',
+          ...style
+        }}
+        {...rest}
+      />
+      {suffix && (
+        <span className={`${InputStyle}-fix`}>{suffix}</span>
+      )}
+    </span>
   );
 }
 
@@ -30,5 +48,7 @@ Input.defaultProps = {
   onChange: () => {},
   onBlur: () => {},
   onFocus: () => {},
-  value: null
+  value: undefined,
+  prefix: null,
+  suffix: null
 };

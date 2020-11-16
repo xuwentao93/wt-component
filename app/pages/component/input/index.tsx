@@ -13,8 +13,8 @@ export default function InputPage() {
     blur() {
       console.log('blur!');
     },
-    change(value: any) {
-      console.log(value);
+    change(e: React.ChangeEvent<HTMLInputElement>) {
+      console.log(e.target.value);
     }
   };
   return (
@@ -22,7 +22,22 @@ export default function InputPage() {
       <Input
         onFocus={methods.focus}
         onBlur={methods.blur}
-        onChange={e => methods.change(e.target)}
+        onChange={e => methods.change(e)}
+      />
+      <div style={{ marginBottom: '20px', minHeight: '1px' }} />
+      <Input
+        prefix={1}
+        suffix="123"
+        onFocus={methods.focus}
+        onBlur={methods.blur}
+        onChange={e => methods.change(e)}
+      />
+      <div style={{ marginBottom: '20px', minHeight: '1px' }} />
+      <Input
+        prefix={<div>this is a div</div>}
+        onFocus={methods.focus}
+        onBlur={methods.blur}
+        onChange={e => methods.change(e)}
       />
     </div>
   );

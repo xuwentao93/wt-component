@@ -2,8 +2,13 @@ module.exports = {
   "settings": {
     "import/resolver": { // 这个配置能正确引入 .ts 文件.
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
+        "extensions": [".js", ".jsx", ".ts", ".tsx", "index.js", "index.ts", "index.tsx", "index.jsx"]
+      },
+      "alias": {
+        "map": [
+          ['@', './app/'],
+        ],
+      },
     }
   },
   "parser": "@typescript-eslint/parser", // 这个可以解析 Ts, 当然, js 也可以.
@@ -37,7 +42,8 @@ module.exports = {
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/no-static-element-interactions": "off",
     "prefer-object-spread": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "import/order": "off"
     // "prefer-const": ["off"]
   }
 }
