@@ -2,6 +2,8 @@ import * as React from 'react';
 import './index.less';
 import { createPageRootClassName } from '../../../utils/index';
 import Input from '../../../component/input/index';
+// eslint-disable-next-line import/no-unresolved
+import { Search } from '@/icon/index';
 
 const input = createPageRootClassName('input');
 
@@ -23,6 +25,8 @@ export default function InputPage() {
         onFocus={methods.focus}
         onBlur={methods.blur}
         onChange={e => methods.change(e)}
+        icon={<Search />}
+        placeholder="sss"
       />
       <div style={{ marginBottom: '20px', minHeight: '1px' }} />
       <Input
@@ -31,6 +35,7 @@ export default function InputPage() {
         onFocus={methods.focus}
         onBlur={methods.blur}
         onChange={e => methods.change(e)}
+        placeholder="aaa"
       />
       <div style={{ marginBottom: '20px', minHeight: '1px' }} />
       <Input

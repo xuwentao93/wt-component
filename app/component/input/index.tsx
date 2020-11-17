@@ -9,9 +9,11 @@ interface InputProps extends BasicProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void,
   onBlur?: (e?: React.FocusEvent<HTMLDivElement>) => void,
   onFocus?: (e?: React.FocusEvent<HTMLDivElement>) => void,
+  icon?: any,
   prefix?: any,
   suffix?: any,
-  value?: any
+  value?: any,
+  placeholder?: string
 }
 
 export default function Input({
@@ -19,6 +21,7 @@ export default function Input({
   prefix = null,
   suffix = null,
   style = {},
+  icon = null,
   ...rest
 }: InputProps) {
   const InputClass: Array<string> = [];
@@ -28,15 +31,19 @@ export default function Input({
       {prefix && (
         <span className={`${InputStyle}-fix`}>{prefix}</span>
       )}
-      <input
-        className={className}
-        style={{
-          borderRadius: (prefix || suffix) ? '0' : '3px',
-          display: (prefix || suffix) ? 'table-cell' : 'inline-block',
-          ...style
-        }}
-        {...rest}
-      />
+      <span style={{ position: 'relative' }}>
+        {icon && <span className={`${InputStyle}-icon`}>{icon}</span>}
+        <input
+          className={className}
+          style={{
+            borderRadius: (prefix || suffix) ? '0' : '3px',
+            display: (prefix || suffix) ? 'table-cell' : 'inline-block',
+            paddingLeft: icon ? '30px' : '8px',
+            ...style
+          }}
+          {...rest}
+        />
+      </span>
       {suffix && (
         <span className={`${InputStyle}-fix`}>{suffix}</span>
       )}
@@ -50,5 +57,7 @@ Input.defaultProps = {
   onFocus: () => {},
   value: undefined,
   prefix: null,
-  suffix: null
+  suffix: null,
+  icon: null,
+  placeholder: ''
 };

@@ -1,3 +1,5 @@
 export { default as Loading } from './loading';
 
-export const a = 1;
+export { default as Search } from './search';
+
+export { default as Arrow } from './arrow';
