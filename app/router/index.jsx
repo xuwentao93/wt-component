@@ -1,27 +1,28 @@
-import React, { useState } from 'react';
+/* eslint-disable no-restricted-globals */
+import React, { useState, useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Switch,
-  useHistory
+  Switch
 } from 'react-router-dom';
-import Pages, { Introduce, Home } from '../pages';
+import Pages, { Introduce, Home, Profile } from '../pages';
+import sidebarRouteRender from './sidebarRoute.tsx';
 import Navigation from '../component/navigation';
 
 const routes = Object.keys(Pages).map(item => ({
-  component: Pages[item],
+  component: () => sidebarRouteRender(Pages[item]),
+  // component: Pages[item],
   path: `/component/${item.toLowerCase().slice(0, -4)}`,
   exact: true
 }));
 
-export default function App() {
-  const history = useHistory();
-  console.log(history);
+console.log(routes);
 
+export default function App() {
   const navTitleList = [
     {
       name: '介绍',
-      path: '/introduce'
+      path: 'introduce'
     },
     {
       name: '组件',
@@ -40,9 +41,21 @@ export default function App() {
       const curSelectedList = new Array(navTitleList.length).fill(false);
       curSelectedList[index] = true;
       setSelectedList(curSelectedList);
-      history.push(path);
+      location.href = `${location.protocol}//${location.host}/${path}`;
     }
   };
+
+  useEffect(() => {
+    const curSelectedList = new Array(navTitleList.length).fill(false);
+    const { pathname } = location;
+    for (let i = 0; i < navTitleList.length; i++) {
+      if (navTitleList[i].path.includes(pathname.slice(1))) {
+        curSelectedList[i] = true;
+        console.log(i);
+      }
+    }
+    setSelectedList(curSelectedList);
+  }, []);
 
   return (
     <Router>
@@ -62,6 +75,7 @@ export default function App() {
       <Switch>
         <Route component={Home} path="/" exact />
         <Route component={Introduce} path="/introduce" exact />
+        <Route component={Profile} path="/profile" exact />
         {routes.map(route => (
           <Route component={route.component} path={route.path} exact={route.exact} key={route.path} />
         ))}

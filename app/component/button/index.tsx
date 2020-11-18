@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import * as React from 'react';
-import { useState, useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { Loading } from '@/icon/index';
 import './index.less';
 import {

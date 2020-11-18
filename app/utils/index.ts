@@ -19,7 +19,7 @@ export function spellError(prop: string): void {
 
 export interface BasicProps {
   children?: React.ReactChild,
-  style?: object,
+  style?: React.CSSProperties,
   compRef?: any,
   onClick?: (e?: React.MouseEvent<HTMLDivElement>) => void,
   onMouseEnter?: (e?: React.MouseEvent<HTMLDivElement>) => void,

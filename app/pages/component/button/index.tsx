@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState, useRef } from 'react';
 import './index.less';
 import { createPageRootClassName } from '../../../utils/index';
-import Button from '../../../component/button/index';
+import { Button } from '@/component/index';
 
 const button = createPageRootClassName('button');
 

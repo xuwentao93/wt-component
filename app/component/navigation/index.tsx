@@ -20,19 +20,19 @@ export default function Navigation({
   style = {},
   ...rest
 }: NavigationProps) {
-  const NavigationClass: Array<string> = [];
+  const NavigationClass: Array<string> = [selected ? 'selected' : ''];
   const className = getClassName(NavigationClass, NavigationStyle, [NavigationStyle]);
   return (
     <>
       <div
         className={className}
-        style={{ ...style, position: fixed ? 'fixed' : 'static', color: selected ? '#454bff' : '#333' }}
+        style={{ ...style, position: fixed ? 'fixed' : 'static' }}
         ref={compRef}
         {...rest}
       >
         {children}
       </div>
-      {fixed && <div style={{ width: '100%', height: '64px' }} />}
+      {fixed && <div style={{ width: '100%', height: '94px' }} />}
     </>
   );
 }

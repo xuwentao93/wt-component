@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './index.less';
-import { createPageRootClassName } from '../../../utils/index';
-import Input from '../../../component/input/index';
+import { createPageRootClassName } from '@/utils/index.ts';
+import { Input } from '@/component/index';
 // eslint-disable-next-line import/no-unresolved
 import { Search } from '@/icon/index';
 
