@@ -22,10 +22,11 @@ export default function Input({
   suffix = null,
   style = {},
   icon = null,
+  className = '',
   ...rest
 }: InputProps) {
   const InputClass: Array<string> = [];
-  const className = getClassName(InputClass, InputStyle, [InputStyle]);
+  const classNames = getClassName(InputClass, InputStyle, [InputStyle, className]);
   return (
     <span style={{ display: 'table' }}>
       {prefix && (
@@ -34,7 +35,7 @@ export default function Input({
       <span style={{ position: 'relative' }}>
         {icon && <span className={`${InputStyle}-icon`}>{icon}</span>}
         <input
-          className={className}
+          className={classNames}
           style={{
             borderRadius: (prefix || suffix) ? '0' : '3px',
             display: (prefix || suffix) ? 'table-cell' : 'inline-block',

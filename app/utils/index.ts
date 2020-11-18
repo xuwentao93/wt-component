@@ -18,9 +18,10 @@ export function spellError(prop: string): void {
 }
 
 export interface BasicProps {
-  children?: React.ReactChild,
+  children?: React.ReactNode,
   style?: React.CSSProperties,
   compRef?: any,
+  className?: string,
   onClick?: (e?: React.MouseEvent<HTMLDivElement>) => void,
   onMouseEnter?: (e?: React.MouseEvent<HTMLDivElement>) => void,
   onMouseLeave?: (e?: React.MouseEvent<HTMLDivElement>) => void,
@@ -28,6 +29,9 @@ export interface BasicProps {
 }
 
 export interface IconProps {
-  style?: object,
-  className?: string
+  style?: React.CSSProperties,
+  className?: string,
+  // onClick?: (e?: React.MouseEvent<HTMLDivElement>) => void,
+  // onMouseEnter?: (e?: React.MouseEvent<HTMLDivElement>) => void,
+  // onMouseLeave?: (e?: React.MouseEvent<HTMLDivElement>) => void
 }

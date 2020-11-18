@@ -19,3 +19,10 @@ table
 message
 modal
 progress
+pagenation
+treeMenu
+tips
+confirm
+collapse
+
+total: 23

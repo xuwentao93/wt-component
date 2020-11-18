@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-restricted-globals */
 import React, { useState, useEffect } from 'react';
 import {
@@ -5,9 +6,11 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
+import './index.less';
 import Pages, { Introduce, Home, Profile } from '../pages';
 import sidebarRouteRender from './sidebarRoute.tsx';
 import Navigation from '../component/navigation';
+import { Github } from '@/icon/index';
 
 const routes = Object.keys(Pages).map(item => ({
   component: () => sidebarRouteRender(Pages[item]),
@@ -45,21 +48,11 @@ export default function App() {
     }
   };
 
-  useEffect(() => {
-    const curSelectedList = new Array(navTitleList.length).fill(false);
-    const { pathname } = location;
-    for (let i = 0; i < navTitleList.length; i++) {
-      if (navTitleList[i].path.includes(pathname.slice(1))) {
-        curSelectedList[i] = true;
-        console.log(i);
-      }
-    }
-    setSelectedList(curSelectedList);
-  }, []);
-
   return (
     <Router>
       <Navigation>
+        <img src="https://findicons.com/files/icons/2787/beautiful_flat_icons/128/countdown.png" type="logo" alt="" />
+        <div type="title">wt-component</div>
         {navTitleList.map((title, i) => (
           <div
             key={title.name}
@@ -69,8 +62,8 @@ export default function App() {
             {title.name}
           </div>
         ))}
-        <div style={{ flex: 1, minHeight: 'px' }} />
-        <div>test</div>
+        <div style={{ flex: 1, minHeight: '1px' }} />
+        <Github className="router-github-icon" />
       </Navigation>
       <Switch>
         <Route component={Home} path="/" exact />

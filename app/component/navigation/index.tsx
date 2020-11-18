@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useRef } from 'react';
 import './index.less';
-import { createComponentRootClassName, BasicProps, getClassName } from '../../utils/index';
+import { createComponentRootClassName, BasicProps, getClassName } from '@/utils/index.ts';
 
 const NavigationStyle = createComponentRootClassName('Navigation');
 
@@ -16,16 +16,17 @@ export default function Navigation({
   fixed = false,
   shadow = true,
   selected = false,
+  className = '',
   compRef = useRef(),
   style = {},
   ...rest
 }: NavigationProps) {
   const NavigationClass: Array<string> = [selected ? 'selected' : ''];
-  const className = getClassName(NavigationClass, NavigationStyle, [NavigationStyle]);
+  const classNames = getClassName(NavigationClass, NavigationStyle, [NavigationStyle, className]);
   return (
     <>
       <div
-        className={className}
+        className={classNames}
         style={{ ...style, position: fixed ? 'fixed' : 'static' }}
         ref={compRef}
         {...rest}

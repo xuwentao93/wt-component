@@ -26,6 +26,7 @@ export default function Button({
   arrow = '',
   compRef = useRef(),
   disabled = false,
+  className = '',
   ...rest
 }: ButtonProps) {
   const ButtonTypes: Array<string | undefined> = ['primary', 'normal', 'danger', 'warn'];
@@ -39,8 +40,8 @@ export default function Button({
     arrow,
     disabled ? 'disabled' : ''
   ];
-  const otherClass: Array<string> = [ButtonStyle];
-  const className: string = getClassName(buttonClass, ButtonStyle, otherClass);
+  const otherClass: Array<string> = [ButtonStyle, className];
+  const classNames: string = getClassName(buttonClass, ButtonStyle, otherClass);
 
   const triangleClass: Array<string> = [
     'triangle',
@@ -50,7 +51,7 @@ export default function Button({
   const triangleClassName: string = getClassName(triangleClass, ButtonStyle, []);
 
   return (
-    <div className={className} {...rest} ref={compRef}>
+    <div className={classNames} {...rest} ref={compRef}>
       {arrow && <div className={triangleClassName} />}
       {loading && (
         <Loading

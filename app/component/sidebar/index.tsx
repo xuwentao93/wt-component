@@ -22,13 +22,14 @@ export default function Sidebar({
   children,
   theme = light,
   shrink = false,
+  className = '',
   compRef = useRef()
 }: SidebarProps) {
   if (theme !== dark && theme !== light) spellError('theme');
   const SidebarClass: Array<string> = [shrink ? 'shrink' : '', theme === dark ? dark : light];
-  const className = getClassName(SidebarClass, SidebarStyle, [SidebarStyle]);
+  const classNames = getClassName(SidebarClass, SidebarStyle, [SidebarStyle, className]);
   return (
-    <div className={className} ref={compRef}>{children}</div>
+    <div className={classNames} ref={compRef}>{children}</div>
   );
 }
 
