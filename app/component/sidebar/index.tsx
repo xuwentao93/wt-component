@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useRef } from 'react';
+import { useRef, createContext } from 'react';
 import './index.less';
 import {
   createComponentRootClassName,
@@ -13,10 +13,20 @@ const light = 'light';
 
 const SidebarStyle = createComponentRootClassName('Sidebar');
 
+interface Theme {
+  color?: string,
+  background?: string,
+  active?: string,
+  hover?: string,
+  selected?: string
+}
+
 interface SidebarProps extends BasicProps {
-  theme?: 'dark' | 'light',
+  theme?: 'dark' | 'light' | Theme,
   shrink?: boolean
 }
+
+export const ThemeContext = createContext({});
 
 export default function Sidebar({
   children,
@@ -28,8 +38,13 @@ export default function Sidebar({
   if (theme !== dark && theme !== light) spellError('theme');
   const SidebarClass: Array<string> = [shrink ? 'shrink' : '', theme === dark ? dark : light];
   const classNames = getClassName(SidebarClass, SidebarStyle, [SidebarStyle, className]);
+
   return (
-    <div className={classNames} ref={compRef}>{children}</div>
+    <div className={classNames} ref={compRef}>
+      <ThemeContext.Provider value={theme}>
+        {children}
+      </ThemeContext.Provider>
+    </div>
   );
 }
 
