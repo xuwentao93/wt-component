@@ -1,3 +1,5 @@
+import Pages, { Introduce } from '../index';
+
 export const MenuList = [
   {
     title: '布局',
@@ -42,3 +44,9 @@ export const MenuList = [
     title: 'test'
   }
 ];
+
+export const routes = Object.keys(Pages).map(item => ({
+  component: Pages[item],
+  path: `/component/${item.toLowerCase().slice(0, -4)}`,
+  exact: true
+}));

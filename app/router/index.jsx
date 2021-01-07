@@ -7,17 +7,10 @@ import {
   Switch
 } from 'react-router-dom';
 import './index.less';
-import Pages, { Introduce, Home, Profile } from '../pages';
-import sidebarRouteRender from './sidebarRoute.tsx';
+import { Introduce, Home, Profile } from '../pages';
 import Navigation from '../component/navigation';
+import ComponentPage from '../pages/component';
 import { Github } from '@/icon/index';
-
-const routes = Object.keys(Pages).map(item => ({
-  component: () => sidebarRouteRender(Pages[item]),
-  // component: Pages[item],
-  path: `/component/${item.toLowerCase().slice(0, -4)}`,
-  exact: true
-}));
 
 export default function App() {
   const navTitleList = [
@@ -67,9 +60,7 @@ export default function App() {
         <Route component={Home} path="/" exact />
         <Route component={Introduce} path="/introduce" exact />
         <Route component={Profile} path="/profile" exact />
-        {routes.map(route => (
-          <Route component={route.component} path={route.path} exact={route.exact} key={route.path} />
-        ))}
+        <Route component={ComponentPage} path="/component" />
       </Switch>
     </Router>
   );

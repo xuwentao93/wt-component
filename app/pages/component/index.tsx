@@ -1,15 +1,15 @@
 import * as React from 'react';
-import { useHistory } from 'react-router-dom';
-import './sidebarRoute.less';
+import { useHistory, Route } from 'react-router-dom';
+import './index.less';
 import { createPageRootClassName } from '@/utils/index.ts';
 import { Menu, Sidebar } from '@/component/index';
-import { MenuList } from './constant';
+import { MenuList, routes } from './constant';
 
 const { SubMenu } = Menu;
 
-const SidebarRoute = createPageRootClassName('Sidebar-route');
+const ComponentRoute = createPageRootClassName('Component-route');
 
-export default function SidebarRouteHOC(Component: any) {
+export default function ComponentPage() {
   const histroy = useHistory();
   const methods = {
     changeRoute(path: string | void) {
@@ -18,7 +18,7 @@ export default function SidebarRouteHOC(Component: any) {
     }
   };
   return (
-    <div className={SidebarRoute}>
+    <div className={ComponentRoute}>
       <div>
         <Sidebar theme="light">
           {MenuList.map(menu => (
@@ -32,8 +32,10 @@ export default function SidebarRouteHOC(Component: any) {
           ))}
         </Sidebar>
       </div>
-      <div className={`${SidebarRoute}-right`}>
-        <Component />
+      <div className={`${ComponentRoute}-right`}>
+        {routes.map(route => (
+          <Route component={route.component} path={route.path} exact={route.exact} key={route.path} />
+        ))}
       </div>
     </div>
   );
