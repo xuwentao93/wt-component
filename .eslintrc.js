@@ -43,7 +43,8 @@ module.exports = {
     "jsx-a11y/no-static-element-interactions": "off",
     "prefer-object-spread": "off",
     "react/jsx-props-no-spreading": "off",
-    "import/order": "off"
+    "import/order": "off",
+    "import/prefer-default-export": "off"
     // "prefer-const": ["off"]
   }
 }

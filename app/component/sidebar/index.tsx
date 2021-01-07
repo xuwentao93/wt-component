@@ -5,7 +5,9 @@ import {
   createComponentRootClassName,
   BasicProps,
   getClassName,
-  spellError
+  spellError,
+  typeError,
+  getType
 } from '@/utils/index.ts';
 
 const dark = 'dark';
@@ -36,7 +38,18 @@ export default function Sidebar({
   compRef = useRef()
 }: SidebarProps) {
   if (theme !== dark && theme !== light) spellError('theme');
-  const SidebarClass: Array<string> = [shrink ? 'shrink' : '', theme === dark ? dark : light];
+  const SidebarClass: Array<string> = [shrink ? 'shrink' : ''];
+  if (theme === dark) {
+    SidebarClass.push(dark);
+  } else if (theme === light) {
+    SidebarClass.push(light);
+  } else if (getType(theme) !== 'Object') {
+    if (getType(theme) === 'String') {
+      spellError('theme');
+    } else {
+      typeError('theme');
+    }
+  }
   const classNames = getClassName(SidebarClass, SidebarStyle, [SidebarStyle, className]);
 
   return (

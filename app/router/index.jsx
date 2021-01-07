@@ -19,8 +19,6 @@ const routes = Object.keys(Pages).map(item => ({
   exact: true
 }));
 
-console.log(routes);
-
 export default function App() {
   const navTitleList = [
     {

@@ -20,17 +20,21 @@ export default function SidebarRouteHOC(Component: any) {
   return (
     <div className={SidebarRoute}>
       <div>
-        <Sidebar theme="dark">
+        <Sidebar theme="light">
           {MenuList.map(menu => (
-            <Menu title={menu.title} selected={menu.selected} key={menu.title}>
-              {menu.subMenu.map(sub => (
-                <SubMenu key={sub.text} onClick={() => methods.changeRoute(sub.path)}>{sub.text}</SubMenu>
+            <Menu title={menu.title} key={menu.title}>
+              {menu.subMenu && menu.subMenu.map(sub => (
+                <SubMenu key={sub.text} onClick={() => methods.changeRoute(sub.path)}>
+                  {sub.text}
+                </SubMenu>
               ))}
             </Menu>
           ))}
         </Sidebar>
       </div>
-      <Component />
+      <div className={`${SidebarRoute}-right`}>
+        <Component />
+      </div>
     </div>
   );
 }

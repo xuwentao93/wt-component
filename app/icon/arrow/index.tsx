@@ -1,24 +1,21 @@
 /* eslint-disable max-len */
 import * as React from 'react';
-import { IconProps, spellError } from '@/utils/index.ts';
+import './index.less';
+import { IconProps, spellError, createIconRootClassName } from '@/utils/index.ts';
+
+const ArrowStyle = createIconRootClassName('Arrow');
 
 interface ArrowProps extends IconProps {
-  point?: 'right' | 'left' | 'top' | 'bottom'
-}
-
-interface PointList {
-  right: number,
-  left: number,
-  top: number,
-  bottom: number
+  point?: string
 }
 
 export default function Arrow({
   point = 'right',
   style = {},
+  className = '',
   ...rest
 }: ArrowProps) {
-  const pointList: PointList = {
+  const pointList: any = {
     right: 0,
     left: 180,
     top: 270,
@@ -31,8 +28,7 @@ export default function Arrow({
   return (
     <svg
       viewBox="0 0 1024 1024"
-      width="14"
-      height="14"
+      className={`${ArrowStyle} ${className}`}
       style={{ ...style, transform: `rotate(${pointList[point]}deg)` }}
       {...rest}
     >
