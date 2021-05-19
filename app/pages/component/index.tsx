@@ -22,7 +22,7 @@ export default function ComponentPage() {
       <div>
         <Sidebar theme="light">
           {MenuList.map(menu => (
-            <Menu title={menu.title} key={menu.title}>
+            <Menu title={menu.title} key={menu.title} canCollapse={menu.canCollapse}>
               {menu.subMenu && menu.subMenu.map(sub => (
                 <SubMenu key={sub.text} onClick={() => methods.changeRoute(sub.path)}>
                   {sub.text}

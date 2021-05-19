@@ -27,7 +27,7 @@ const dark = 'dark';
 interface MenuProps extends BasicProps {
   title?: string,
   selected?: boolean,
-  canCollapse?: boolean,
+  canCollapse?: boolean | undefined,
   defalutCollapse?: boolean
 }
 

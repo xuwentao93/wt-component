@@ -10,10 +10,10 @@ export const MenuList = [
       },
       {
         text: 'Sidebar 侧边栏',
-
         path: 'component/sidebar'
       }
-    ]
+    ],
+    canCollapse: true
   },
   {
     title: '基本',
@@ -26,22 +26,27 @@ export const MenuList = [
         text: 'Input 输入框',
         path: 'component/input'
       }
-    ]
+    ],
+    canCollapse: true
   },
   {
     title: '数据渲染',
-    subMenu: []
+    subMenu: [],
+    canCollapse: true
   },
   {
     title: '数据录入',
-    subMenu: []
+    subMenu: [],
+    canCollapse: true
   },
   {
     title: '交互提示',
-    subMenu: []
+    subMenu: [],
+    canCollapse: true
   },
   {
-    title: 'test'
+    title: 'test',
+    canCollapse: false
   }
 ];
 

@@ -46,6 +46,8 @@ const webpackConfig = merge(webpackBase, {
   stats: 'errors-only',
   mode: 'production',
   optimization: {
+    // usedExports: true, //  Webpack 将识别出它认为没有被使用的代码，并在最初的打包步骤中给它做标记。
+    // 简单说即使用于 tree shaking, 只有在 mode 为 production 的时候才有效.
     minimizer: [
       new TerserPlugin({
         parallel: true
