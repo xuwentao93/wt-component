@@ -16,14 +16,12 @@ export default function Arrow({
   ...rest
 }: ArrowProps) {
   const pointList: any = {
-    right: 0,
-    left: 180,
-    top: 270,
-    bottom: 90
+    right: 270,
+    left: 90,
+    top: 180,
+    bottom: 0
   };
-  if (pointList[point] === undefined) {
-    spellError('point');
-  }
+  if (pointList[point] === undefined) spellError('point');
 
   return (
     <svg
@@ -32,7 +30,7 @@ export default function Arrow({
       style={{ ...style, transform: `rotate(${pointList[point]}deg)` }}
       {...rest}
     >
-      <path d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z" />
+      <path d="M512 714.666667c-8.533333 0-17.066667-2.133333-23.466667-8.533334l-341.333333-341.333333c-12.8-12.8-12.8-32 0-44.8 12.8-12.8 32-12.8 44.8 0l320 317.866667 317.866667-320c12.8-12.8 32-12.8 44.8 0 12.8 12.8 12.8 32 0 44.8L533.333333 704c-4.266667 8.533333-12.8 10.666667-21.333333 10.666667z" p-id="2982" />
     </svg>
   );
 }

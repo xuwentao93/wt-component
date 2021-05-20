@@ -13,10 +13,10 @@ import {
 const ButtonStyle = createComponentRootClassName('Button');
 
 interface ButtonProps extends BasicProps {
-  loading?: boolean,
-  type?: string,
-  arrow?: string,
-  disabled?: boolean
+  loading?: boolean, // 加载中.
+  type?: string, // 按钮类型(样式).
+  arrow?: string, // 按钮箭头朝向.
+  disabled?: boolean // 是否禁用.
 }
 
 export default function Button({

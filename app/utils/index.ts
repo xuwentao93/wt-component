@@ -1,17 +1,21 @@
 import * as React from 'react';
 
+// 生成类名的根.避免和其他的类名冲突.
 export function createComponentRootClassName(component: string): string {
   return `wt-component-root-${component}`;
 }
 
+// 生成类名的根.避免和其他的类名冲突.
 export function createPageRootClassName(component: string): string {
   return `wt-page-root-${component}`;
 }
 
+// 生成类名的根.避免和其他的类名冲突.
 export function createIconRootClassName(component: string): string {
   return `wt-icon-root-${component}`;
 }
 
+// 为组件的每个样式加上根类名的前缀, 避免和其他同类名冲突.
 // eslint-disable-next-line max-len
 export function getClassName(compClass: Array<string>, compName: string, otherClass: Array<string>): string {
   // eslint-disable-next-line max-len
@@ -30,6 +34,7 @@ export function getType(obj?: any) {
   return Object.prototype.toString.call(obj).slice(8, -1);
 }
 
+// 每个组件都可能出现的 props 的基本内容和类型.
 export interface BasicProps {
   children?: React.ReactNode,
   style?: React.CSSProperties,

@@ -42,6 +42,7 @@ export default function Input({
             paddingLeft: icon ? '30px' : '8px',
             ...style
           }}
+          onChange={onChange}
           {...rest}
         />
       </span>

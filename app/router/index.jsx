@@ -12,32 +12,43 @@ import Navigation from '../component/navigation';
 import ComponentPage from '../pages/component';
 import { Github } from '@/icon/index';
 
-export default function App() {
-  const navTitleList = [
-    {
-      name: '介绍',
-      path: 'introduce'
-    },
-    {
-      name: '组件',
-      path: 'component'
-    },
-    {
-      name: '关于我',
-      path: 'profile'
-    }
-  ];
+const navTitleList = [
+  {
+    name: '介绍',
+    path: 'introduce'
+  },
+  {
+    name: '组件',
+    path: 'component'
+  },
+  {
+    name: '关于我',
+    path: 'profile'
+  }
+];
 
+export default function App() {
   const [selectedList, setSelectedList] = useState(new Array(navTitleList.length).fill(false));
 
   const methods = {
     changeSelected(path, index) {
-      const curSelectedList = new Array(navTitleList.length).fill(false);
-      curSelectedList[index] = true;
-      setSelectedList(curSelectedList);
       location.href = `${location.protocol}//${location.host}/${path}`;
     }
   };
+
+  useEffect(() => {
+    const curSelectedList = new Array(navTitleList.length).fill(false);
+    const pathname = window.location.pathname.slice(1);
+    for (let i = 0; i < curSelectedList.length; i++) {
+      console.log(pathname);
+      if ((pathname.indexOf('/') !== -1 && pathname.slice(0, pathname.indexOf('/') + 1) === navTitleList[i].path)
+        || pathname === navTitleList[i].path) {
+        curSelectedList[i] = true;
+        setSelectedList(curSelectedList);
+        break;
+      }
+    }
+  }, []);
 
   return (
     <Router>
@@ -47,14 +58,14 @@ export default function App() {
         {navTitleList.map((title, i) => (
           <div
             key={title.name}
-            selected={selectedList[i]}
             onClick={() => methods.changeSelected(`./${title.path}`, i)}
+            style={{ color: selectedList[i] ? '#454bff' : '' }}
           >
             {title.name}
           </div>
         ))}
         <div style={{ flex: 1, minHeight: '1px' }} />
-        <Github className="router-github-icon" />
+        <Github className="router-github-icon" link="https://github.com/xuwentao93/wt-component" />
       </Navigation>
       <Switch>
         <Route component={Home} path="/" exact />

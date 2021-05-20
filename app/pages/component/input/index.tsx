@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import './index.less';
 import { createPageRootClassName } from '@/utils/index.ts';
 import { Input } from '@/component/index';
@@ -8,6 +9,8 @@ import { Search } from '@/icon/index';
 const input = createPageRootClassName('input');
 
 export default function InputPage() {
+  const [v, setV] = useState('444');
+
   const methods = {
     focus() {
       console.log('focus!');
@@ -17,6 +20,7 @@ export default function InputPage() {
     },
     change(e: React.ChangeEvent<HTMLInputElement>) {
       console.log(e.target.value);
+      setV(e.target.value);
     }
   };
   return (
@@ -24,7 +28,7 @@ export default function InputPage() {
       <Input
         onFocus={methods.focus}
         onBlur={methods.blur}
-        onChange={e => methods.change(e)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => methods.change(e)}
         icon={<Search />}
         placeholder="sss"
       />
@@ -34,7 +38,7 @@ export default function InputPage() {
         suffix="123"
         onFocus={methods.focus}
         onBlur={methods.blur}
-        onChange={e => methods.change(e)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => methods.change(e)}
         placeholder="aaa"
       />
       <div style={{ marginBottom: '20px', minHeight: '1px' }} />
@@ -42,7 +46,8 @@ export default function InputPage() {
         prefix={<div>this is a div</div>}
         onFocus={methods.focus}
         onBlur={methods.blur}
-        onChange={e => methods.change(e)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => methods.change(e)}
+        value={v}
       />
     </div>
   );
