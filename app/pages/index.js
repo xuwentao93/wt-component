@@ -1,11 +1,13 @@
 import ButtonPage from './component/button/index';
 import InputPage from './component/input/index';
 import NavigationPage from './component/navigation/index';
+import TablePage from './component/table/index';
 
 export default {
   ButtonPage,
   InputPage,
-  NavigationPage
+  NavigationPage,
+  TablePage
 };
 
 export { default as Home } from './home/index';

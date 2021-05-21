@@ -13,7 +13,6 @@ const components = glob.sync(path.join(__dirname, '../app/component/*/')).reduce
   [`${path.basename(curr)}`]: curr,
   ...prev
 }), {});
-console.log(components);
 
 const webpackConfig = merge(webpackBase, {
   entry: {

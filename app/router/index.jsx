@@ -40,7 +40,6 @@ export default function App() {
     const curSelectedList = new Array(navTitleList.length).fill(false);
     const pathname = window.location.pathname.slice(1);
     for (let i = 0; i < curSelectedList.length; i++) {
-      console.log(pathname);
       if ((pathname.indexOf('/') !== -1 && pathname.slice(0, pathname.indexOf('/') + 1) === navTitleList[i].path)
         || pathname === navTitleList[i].path) {
         curSelectedList[i] = true;

@@ -16,10 +16,9 @@ export default function InputPage() {
       console.log('focus!');
     },
     blur() {
-      console.log('blur!');
+      // console.log('blur!');
     },
     change(e: React.ChangeEvent<HTMLInputElement>) {
-      console.log(e.target.value);
       setV(e.target.value);
     }
   };

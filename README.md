@@ -4,25 +4,25 @@ input
 navigation
 sidebar
 menu
+table
 
 # waiting
-affix
-copy // click to copy.
+copy.
 carousel
 timepicker
 select / option
-tab
-upload
-radio
-checkbox
-table
-message
-modal
-progress
 pagenation
-treeMenu
-tips
-confirm
-collapse
+upload
+modal
+<!-- affix -->
+<!-- tab -->
+<!-- radio -->
+<!-- checkbox -->
+<!-- message -->
+<!-- progress -->
+<!-- treeMenu -->
+<!-- tips -->
+<!-- confirm -->
+<!-- collapse -->
 
-total: 23
+total: 8

@@ -36,7 +36,12 @@ export const MenuList = [
   },
   {
     title: '数据录入',
-    subMenu: [],
+    subMenu: [
+      {
+        text: 'Table 表格',
+        path: 'component/table'
+      }
+    ],
     canCollapse: true
   },
   {
