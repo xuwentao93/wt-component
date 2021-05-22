@@ -69,7 +69,8 @@ const testColumns: Array<columnType> = [
   },
   {
     title: '宠物',
-    dataIndex: 'pet'
+    dataIndex: 'pet',
+    width: 120
   },
   {
     title: '位置',

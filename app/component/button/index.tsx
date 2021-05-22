@@ -19,7 +19,7 @@ interface ButtonProps extends BasicProps {
   disabled?: boolean // 是否禁用.
 }
 
-export default function Button({
+function Button({
   children,
   loading,
   type = 'normal',
@@ -27,9 +27,10 @@ export default function Button({
   compRef = useRef(),
   disabled = false,
   className = '',
+  onClick,
   ...rest
 }: ButtonProps) {
-  const ButtonTypes: Array<string | undefined> = ['primary', 'normal', 'danger', 'warn'];
+  const ButtonTypes: Array<string> = ['primary', 'normal', 'danger', 'warn'];
   if (!ButtonTypes.includes(type)) {
     type = 'normal';
     spellError('type');
@@ -51,7 +52,7 @@ export default function Button({
   const triangleClassName: string = getClassName(triangleClass, ButtonStyle, []);
 
   return (
-    <div className={classNames} {...rest} ref={compRef}>
+    <div className={classNames} {...rest} ref={compRef} onClick={disabled ? () => {} : onClick}>
       {arrow && <div className={triangleClassName} />}
       {loading && (
         <Loading
@@ -71,3 +72,5 @@ Button.defaultProps = {
   arrow: '',
   disabled: false
 };
+
+export default React.memo(Button);

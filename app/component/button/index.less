@@ -3,7 +3,9 @@
 .@{component-prefix}-Button {
   position: relative; // 子元素绝对定位用.
   padding: 5px 15px;
+  display: inline-block;
   width: fit-content;
+  margin-right: 12px;
   border-radius: 3px;
   user-select: none;
   transition: background .5s, color .5s, border-color .5s;
@@ -22,18 +24,21 @@
       left: -6px;
       top: 50%;
       margin-top: -6px;
+      transform: rotate(135deg);
     }
 
     &-right {
       right: -6px;
       top: 50%;
       margin-top: -6px;
+      transform: rotate(315deg);
     }
 
     &-top {
       top: -6px;
       left: 50%;
       margin-left: -6px;
+      transform: rotate(225deg);
     }
     
     &-bottom {

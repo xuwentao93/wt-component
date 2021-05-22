@@ -1,36 +1,104 @@
 import * as React from 'react';
-import { useState, useRef } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import './index.less';
 import { createPageRootClassName } from '../../../utils/index';
-import { Button } from '@/component/index';
+import { Button, Table } from '@/component/index';
+import { apiColumns } from '../../../component/table/index';
 
 const button = createPageRootClassName('button');
 
+const data: Array<object> = [
+  {
+    attr: 'type',
+    introduction: '按钮的基本样式',
+    type: 'string',
+    default: 'normal'
+  },
+  {
+    attr: 'loading',
+    introduction: '按钮是否加载中',
+    type: 'boolean',
+    default: 'false'
+  },
+  {
+    attr: 'disabled',
+    introduction: '按钮是否禁用',
+    type: 'boolean',
+    default: 'false'
+  },
+  {
+    attr: 'arrow',
+    introduction: '按钮箭头的朝向',
+    type: 'top | bottom | left | right',
+    default: '\'\''
+  }
+];
+
 export default function ButtonPage() {
   const [loading, setLoading] = useState(false);
+  const [disable, setDisable] = useState(false);
+  const [test, setTest] = useState(false);
   const testRef = useRef();
   const methods = {
     test(): void {
       console.log(testRef);
       setLoading(!loading);
-    }
+    },
+    getf: useCallback(() => {
+      setTest(true);
+    }, [test])
   };
 
   return (
     <div className={button}>
-      <Button
-        onClick={methods.test}
-        style={{ fontSize: '20px' }}
-        arrow="bottom"
-        loading={loading}
-      >
-        button page
-      </Button>
-      <Button type="primary" style={{ marginTop: '20px' }} arrow="left">213</Button>
-      <Button type="danger" style={{ marginTop: '20px' }} arrow="right" compRef={testRef}>中文</Button>
-      <Button type="warn" style={{ marginTop: '20px' }} arrow="top">english</Button>
-      <Button type="warn" style={{ marginTop: '20px' }}>double words</Button>
-      <Button type="warn" style={{ marginTop: '20px' }} disabled loading={loading}>你好啊: 我好</Button>
+      <h1>Button 按钮</h1>
+      <div className="title-brief">常用的页面操作按钮, 用来相应用户的点击行为。</div>
+      <h2>使用演示</h2>
+      <div className="show-code-container">
+        <div className="show-code-box">
+          <div className="show-code-box-header">
+            <Button>普通按钮</Button>
+            <Button type="primary">基础按钮</Button>
+            <Button type="warn">警告按钮</Button>
+            <Button type="danger">危险按钮</Button>
+          </div>
+          <div className="show-code-box-footer">
+            利用 type 属性修改按钮的基本样式。
+          </div>
+        </div>
+        <div className="show-code-box">
+          <div className="show-code-box-header">
+            <Button loading={loading} onClick={() => setLoading(!loading)}>
+              点我显示加载中
+            </Button>
+            <Button type="primary" onClick={() => setDisable(true)}>
+              点我禁用下一个按钮
+            </Button>
+            <Button type="primary" disabled={disable} onClick={() => console.log(1)}>
+              点我在控制台打印日志
+            </Button>
+          </div>
+          <div className="show-code-box-footer">
+            用 loading 属性显示或者关闭加载样式, disable 属性表示按钮是否禁用, 被禁用的按钮点击事件将无效。
+          </div>
+        </div>
+      </div>
+
+      <div className="show-code-container">
+        <div className="show-code-box">
+          <div className="show-code-box-header">
+            <Button arrow="top" type="primary">箭头朝上</Button>
+            <Button arrow="bottom" type="primary">箭头朝下</Button>
+            <Button arrow="left" type="primary">箭头朝左</Button>
+            <Button arrow="right" type="primary">箭头朝右</Button>
+          </div>
+          <div className="show-code-box-footer">用 arrow 属性给按钮添加箭头, 表示按钮朝向。</div>
+        </div>
+      </div>
+
+      <h2 style={{ margin: '40px 0' }}>API</h2>
+
+      <Table data={data} columns={apiColumns} />
     </div>
   );
 }
