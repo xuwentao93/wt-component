@@ -30,7 +30,7 @@ module.exports = {
     "import/no-extraneous-dependencies": ["off"],
     "max-classes-per-file": ["off"],
     "lines-between-class-members": ["off"],
-    "max-len": ["error", { "code": 111 }],
+    "max-len": ["error", { "code": 115 }],
     "no-else-return": ["off"],
     "class-methods-use-this": ["off"],
     "no-plusplus": ["off"],
