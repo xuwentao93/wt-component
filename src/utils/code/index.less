@@ -1,0 +1,30 @@
+@import '../../styles/index.less';
+
+.@{component-prefix}-Code {
+  position: relative;
+  margin-top: 10px;
+  height: 16px;
+  opacity: 0.55;
+  user-select: none;
+  transition: opacity .4s;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &-img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin: 0 auto;
+    transition: opacity .4s;
+  }
+
+  &-hide-img {
+    opacity: 0;
+  }
+}
