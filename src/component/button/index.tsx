@@ -1,14 +1,14 @@
 /* eslint-disable max-len */
 import * as React from 'react';
 import { useRef } from 'react';
-import { Loading } from '@/icon/index';
+import { Loading } from '@/icon';
 import './index.less';
 import {
   createComponentRootClassName,
   BasicProps,
   getClassName,
   spellError
-} from '@/utils/index.ts';
+} from '@/utils';
 
 const ButtonStyle = createComponentRootClassName('Button');
 

@@ -5,9 +5,9 @@ import {
   useEffect,
   useContext
 } from 'react';
+import { ThemeContext } from '@/component/sidebar';
+import Arrow from '@/icon/arrow';
 import SubMenu from './subMenu';
-import { ThemeContext } from '@/component/sidebar/index.tsx';
-import { Arrow } from '@/icon/index';
 import './index.less';
 import {
   createComponentRootClassName,

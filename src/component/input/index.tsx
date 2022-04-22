@@ -6,7 +6,7 @@ import { createComponentRootClassName, BasicProps, getClassName } from '@/utils/
 const InputStyle = createComponentRootClassName('Input');
 
 interface InputProps extends BasicProps {
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void,
+  onChange?: (e?: React.ChangeEvent<HTMLInputElement>) => void,
   onBlur?: (e?: React.FocusEvent<HTMLDivElement>) => void,
   onFocus?: (e?: React.FocusEvent<HTMLDivElement>) => void,
   icon?: any,

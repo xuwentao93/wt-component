@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { useState, useRef, useCallback } from 'react';
+import { useState } from 'react';
+import { Button, Table } from '@/component';
 import './index.less';
-import { createPageRootClassName } from '../../../utils/index';
-import Code from '../../../utils/code/index';
-import { Button, Table } from '@/component/index';
-import { apiColumns } from '../../../component/table/index';
+import { createPageRootClassName } from '../../../utils';
+import Code from '../../../utils/code';
+import { apiColumns } from '../../../component/table';
 
 const button = createPageRootClassName('button');
 

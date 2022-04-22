@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './index.less';
-import { createPageRootClassName } from '@/utils/index.ts';
+import { createPageRootClassName } from '@/utils';
 
 const Navigation = createPageRootClassName('Navigation');
 

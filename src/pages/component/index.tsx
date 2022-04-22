@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useHistory, Route } from 'react-router-dom';
 import './index.less';
 import { createPageRootClassName } from '@/utils/index.ts';
-import { Menu, Sidebar } from '@/component/index';
+import { Menu, Sidebar } from '@/component';
 import { MenuList, routes } from './constant';
 
 const { SubMenu } = Menu;

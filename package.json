@@ -1,11 +1,11 @@
 {
   "name": "wt-component",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "a react component library",
   "scripts": {
     "dev": "vite --config config/vite.config.ts",
     "build": "vite build --config config/vite.config.ts",
-    "preview": "vite preview"
+    "build:docs": "vite build --config config/vite.docs.ts"
   },
   "keywords": [
     "react",

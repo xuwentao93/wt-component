@@ -1,4 +1,4 @@
-import Pages, { Introduce } from '../index';
+import Pages from '../index';
 
 export const MenuList = [
   {

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import './index.less';
 import { createPageRootClassName } from '@/utils/index.ts';
-import { Table } from '@/component/index';
-import { columnType } from '../../../component/table/index';
+import { Table } from '@/component';
+import { columnType } from '../../../component/table';
 
 const table = createPageRootClassName('Table');
 
