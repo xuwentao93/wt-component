@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './index.less';
-import { createPageRootClassName } from '../../utils/index';
+import { createPageRootClassName } from '../../utils';
 
 const home = createPageRootClassName('home');
 

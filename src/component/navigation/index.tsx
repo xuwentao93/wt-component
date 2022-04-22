@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useRef } from 'react';
 import './index.less';
-import { createComponentRootClassName, BasicProps, getClassName } from '@/utils/index.ts';
+import { createComponentRootClassName, BasicProps, getClassName } from '@/utils';
 
 const NavigationStyle = createComponentRootClassName('Navigation');
 
@@ -14,7 +14,7 @@ interface NavigationProps extends BasicProps {
 export default function Navigation({
   children,
   fixed = false,
-  shadow = true,
+  // shadow = true,
   selected = false,
   className = '',
   compRef = useRef(),

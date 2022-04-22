@@ -16,7 +16,7 @@ import {
   spellError,
   typeError,
   getType
-} from '../../utils/index';
+} from '../../utils';
 
 const MenuStyle = createComponentRootClassName('Menu');
 const MenuTitleStlye = `${MenuStyle}-title`;
@@ -35,7 +35,7 @@ export default function Menu({
   children,
   className = '',
   title = '',
-  selected = false,
+  // selected = false,
   canCollapse = true,
   defalutCollapse = false,
   compRef = useRef(),

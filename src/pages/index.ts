@@ -1,7 +1,7 @@
-import ButtonPage from './component/button/index';
-import InputPage from './component/input/index';
-import NavigationPage from './component/navigation/index';
-import TablePage from './component/table/index';
+import ButtonPage from './component/button';
+import InputPage from './component/input';
+import NavigationPage from './component/navigation';
+import TablePage from './component/table';
 
 export default {
   ButtonPage,
@@ -10,8 +10,8 @@ export default {
   TablePage
 };
 
-export { default as Home } from './home/index';
+export { default as Home } from './home';
 
-export { default as Introduce } from './introduce/index';
+export { default as Introduce } from './introduce';
 
-export { default as Profile } from './profile/index';
+export { default as Profile } from './profile';

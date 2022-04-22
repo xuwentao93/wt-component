@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
 import './index.less';
-import { createComponentRootClassName, BasicProps, getClassName } from '../index';
+import { createComponentRootClassName, getClassName } from '../index';
 
 const CodeStyle = createComponentRootClassName('Code');
 

@@ -1,14 +1,13 @@
 import * as React from 'react';
 import './index.less';
-// eslint-disable-next-line import/no-unresolved
-import { createComponentRootClassName, BasicProps, getClassName } from '@/utils/index';
+import { createComponentRootClassName, BasicProps, getClassName } from '@/utils';
 
 const InputStyle = createComponentRootClassName('Input');
 
 interface InputProps extends BasicProps {
-  onChange?: (e?: React.ChangeEvent<HTMLInputElement>) => void,
-  onBlur?: (e?: React.FocusEvent<HTMLDivElement>) => void,
-  onFocus?: (e?: React.FocusEvent<HTMLDivElement>) => void,
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void,
+  onBlur?: (e: React.FocusEvent<HTMLDivElement>) => void,
+  onFocus?: (e: React.FocusEvent<HTMLDivElement>) => void,
   icon?: any,
   prefix?: any,
   suffix?: any,

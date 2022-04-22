@@ -40,10 +40,10 @@ export interface BasicProps {
   style?: React.CSSProperties,
   compRef?: any,
   className?: string,
-  onClick?: (e?: React.MouseEvent<HTMLDivElement>) => void;
-  onMouseEnter?: (e?: React.MouseEvent<HTMLDivElement>) => void;
-  onMouseLeave?: (e?: React.MouseEvent<HTMLDivElement>) => void;
-  onLoad?: (e?: React.SyntheticEvent<HTMLDivElement>) => void;
+  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
+  onMouseEnter?: (e: React.MouseEvent<HTMLDivElement>) => void;
+  onMouseLeave?: (e: React.MouseEvent<HTMLDivElement>) => void;
+  onLoad?: (e: React.SyntheticEvent<HTMLDivElement>) => void;
 }
 
 export interface IconProps {

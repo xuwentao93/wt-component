@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useRef, memo } from 'react';
 import './index.less';
-import { createComponentRootClassName, BasicProps, getClassName } from '../../utils/index';
+import { createComponentRootClassName, BasicProps, getClassName } from '../../utils';
 
 const TableStyle = createComponentRootClassName('Table');
 

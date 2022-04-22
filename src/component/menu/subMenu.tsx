@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useRef, useContext } from 'react';
-import { ThemeContext } from '@/component/sidebar/index.tsx';
+import { ThemeContext } from '@/component/sidebar';
 import './subMenu.less';
 import {
   createComponentRootClassName,
@@ -9,7 +9,7 @@ import {
   getType,
   spellError,
   typeError
-} from '../../utils/index';
+} from '../../utils';
 
 const light = 'light';
 const dark = 'dark';

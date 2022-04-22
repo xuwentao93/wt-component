@@ -7,11 +7,11 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
+import Github from '@/icon/github';
 import './index.less';
 import { Introduce, Home, Profile } from '../pages';
 import Navigation from '../component/navigation';
 import ComponentPage from '../pages/component';
-import { Github } from '@/icon/index';
 
 const navTitleList = [
   {
@@ -32,7 +32,7 @@ export default function App() {
   const [selectedList, setSelectedList] = useState(new Array(navTitleList.length).fill(false));
 
   const methods = {
-    changeSelected(path, index) {
+    changeSelected(path: string) {
       location.href = `${location.protocol}//${location.host}/${path}`;
     }
   };
