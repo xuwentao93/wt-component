@@ -1,50 +1,54 @@
 module.exports = {
-  "settings": {
-    "import/resolver": { // 这个配置能正确引入 .ts 文件.
-      "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx", "index.js", "index.ts", "index.tsx", "index.jsx"]
+  parser: '@typescript-eslint/parser',
+  extends: 'airbnb',
+  env: {
+    browser: true,
+    node: true,
+    es6: true
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: [".js", ".jsx", ".ts", ".tsx"]
       },
-      "alias": {
-        "map": [
-          ['@', './app/'],
+      alias: {
+        map: [
+          ['@', './src/']
         ],
-      },
+        extensions: ['.tsx', '.ts', '.jsx', '.js']
+      }
     }
   },
-  "parser": "@typescript-eslint/parser", // 这个可以解析 Ts, 当然, js 也可以.
-  "extends": "airbnb",
-  "env": {
-    "browser": true,
-    "node": true
-  },
-  "rules": {
-    "linebreak-style": ["off"], // 不同操作系统换行符问题.
-    "comma-dangle": ["error", "never"], // 对象最后一个不要加逗号.
-    "semi": ["error", "always"], // 不要分号
-    "react/jsx-filename-extension": ["off"], // js 中用 jsx 语法报错.
-    "import/extensions": ["off"], // import .jsx 文件报错.
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    "no-static-element-interactions": ["off"],
-    "click-events-have-key-events": ["off"],
-    "import/no-extraneous-dependencies": ["off"],
-    "max-classes-per-file": ["off"],
-    "lines-between-class-members": ["off"],
-    "max-len": ["error", { "code": 115 }],
-    "no-else-return": ["off"],
-    "class-methods-use-this": ["off"],
-    "no-plusplus": ["off"],
-    "no-unused-vars": ["off"], // ts 出现部分问题导致使用过的值仍会出现这个提示.
-    "prefer-const": ["off"],
-    "arrow-parens": ["off"],
-    "no-use-before-define": ["off"],
-    "no-param-reassign": ["off"],
-    "jsx-a11y/click-events-have-key-events": "off",
-    "jsx-a11y/no-static-element-interactions": "off",
-    "prefer-object-spread": "off",
-    "react/jsx-props-no-spreading": "off",
-    "import/order": "off",
-    "import/prefer-default-export": "off"
-    // "prefer-const": ["off"]
+  rules: {
+    'linebreak-style': 0, // 不同操作系统换行符问题.
+    'comma-dangle': [2, 'never'], // 对象最后一个不要加逗号.
+    'react/jsx-filename-extension': 0, // js中用jsx语法报错.
+    'import/extensions': 0, // import .jsx文件报错.
+    'no-console': 0,
+    'no-static-element-interactions': 0,
+    'click-events-have-key-events': 0,
+    'import/no-extraneous-dependencies': 0,
+    'no-plusplus': 0,
+    'no-unescaped-entities': 0,
+    'react/no-unescaped-entities': 0,
+    'max-len': [2, 120],
+    'react/forbid-prop-types': 0,
+    'no-use-before-define': 0,
+    'consistent-return': 0,
+    'global-require': 0,
+    'arrow-parens': [2, 'as-needed'],
+    'import/prefer-default-export': 0,
+    'react/self-closing-comp': 0,
+    'no-param-reassign': 0,
+    'prefer-template': 0,
+    'jsx-a11y/click-events-have-key-events': 0,
+    'jsx-a11y/no-noninteractive-element-interactions': 0,
+    'prefer-const': 0,
+    'jsx-a11y/no-static-element-interactions': 0,
+    'react/require-default-props': 0,
+    'no-shadow': 0,
+    'react/jsx-props-no-spreading': 0,
+    'operator-linebreak': 0,
+    // 'import/no-unresolved': 0,
   }
 }
